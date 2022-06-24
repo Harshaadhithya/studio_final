@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="hire-us-section">
+    
+  <form action="#" class="order">
+              
+<div class="hireus-form-container">
+  <fieldset class="hireus-fieldset">
+      <div class="hireus-form-inputs-container mt-3">
+          <legend>Event details</legend>
+          <div class="order-label">Event Name</div>
+          <input type="text" name="event_name" placeholder="" class="input-responsive" required>
+  
+          <div class="order-label">Venue</div>
+          <input type="text" name="venue" placeholder="" class="input-responsive" required>
+  
+          <div for="order-label">event description</div>
+          <!-- <input type="" name="venue" placeholder="" class="input-responsive" required> -->
+          <textarea id="event-description" name="event-description" rows="4" cols="50" class="input-responsive"></textarea>
+  
+          <div class="order-label">From Date</div>
+          <input type="date" name="from-date" placeholder="" class="input-responsive" required>
+  
+          <div class="order-label">To Date</div>
+          <input type="date" name="to-date" placeholder="" class="input-responsive" required>
+  
+          <div class="order-label">Club/Organization Name</div>
+          <input type="text" name="club/organization-name" placeholder="" class="input-responsive" required>
+          <p><br></p>
+          <input type="submit" name="submit" value="submit" class="btn btn-primary">
+  
+      </div>
+      
+  </fieldset>
+
+</div>
+      
+  </form>
+</section>
+
+ 
+{% endblock %}

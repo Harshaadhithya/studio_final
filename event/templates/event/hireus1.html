@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="hire-us-section">
+    
+  <form action="" method="POST" class="order">
+    {% csrf_token %}
+              
+    <div class="hireus-form-container">
+      <fieldset class="hireus-fieldset">
+          <div class="hireus-form-inputs-container mt-3">
+              <legend>Event details</legend>
+              {% for field in form %}
+
+
+              <div class="order-label">{{field.label}}</div>
+              {{field}}
+      
+              
+              {% endfor %}
+              <p><br></p>
+              <input type="submit" name="submit" value="submit" class="btn btn-primary">
+
+              
+      
+          </div>
+          
+      </fieldset>
+
+    </div>
+      
+  </form>
+</section>
+
+
+<script>
+  let start_date=document.getElementById("id_from_date");
+  let end_date=document.getElementById("id_to_date");
+
+  start_date.addEventListener('change',function(){
+      if(end_date.value!==''){
+          
+          if(Date.parse(start_date.value)>Date.parse(end_date.value)){
+              alert("Enter a valid from and to date")
+              
+              start_date.value='';
+              end_date.value=''
+          }
+      }
+      
+  })
+
+  end_date.addEventListener('change',function(){
+      if(start_date.value!==''){
+          if(Date.parse(start_date.value)>Date.parse(end_date.value)){
+              alert("Enter a valid from and to date")
+              start_date.value='';
+              end_date.value=''
+          }
+
+      }
+      
+
+  })
+</script>
+ 
+{% endblock %}

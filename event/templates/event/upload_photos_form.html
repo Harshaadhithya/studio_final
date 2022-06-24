@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+Event Name:
+{{event_obj.event_name}}
+<hr>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" accept="image/jpeg,image/png" multiple name="uploaded_images" id="uploaded_images">
+    <br>
+    <label for="">Drive Link</label>
+    <input type="text" name="event_photos_link" id="event_photos_link">
+    <br>
+    <input type="submit" id="image_upload_form_button">
+</form>
+<script>
+    let image_field=document.getElementById("uploaded_images");
+    image_field.addEventListener('change',function(){
+        if(image_field.files.length>6){
+            alert("Only 6 files are allowed");
+            image_field.value='';
+        }
+        else{
+            console.log("passed");
+        }
+    })
+</script>
+
+{% endblock %}

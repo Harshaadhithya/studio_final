@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+body {
+  background-color: white;
+  color: black;
+  font-family: 'Poppins';
+}
+
+* {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: 'Poppins';
+}
+
+a {
+  text-decoration: none;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+.container {
+  border-style: none;
+  width: auto;
+  margin: 0 auto;
+  padding: 1.5%;
+  background-color: white;
+}
+
+.container .logo {
+  width: 30em;
+  line-height: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #313131;
+  font-size: 1.2em;
+  border: 1px none black;
+  float: left;
+}
+
+.container .logo span {
+  color: #c71515;
+}
+
+.text-right {
+  text-align: right;
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.navigation :hover {
+  margin: 2px;
+  -webkit-transition: 20ms;
+  transition: 20ms;
+  -webkit-transform: 2%;
+          transform: 2%;
+}
+
+/* css for navbar section */
+.navigation ul {
+  list-style-type: none;
+}
+
+.navigation ul li {
+  display: inline;
+  padding: 1%;
+}
+
+.navigation ul li a {
+  color: #313131;
+}
+
+.wrapper {
+  padding: 1px;
+  width: 80%;
+  margin: 3% auto;
+}
+
+.col-4 {
+  width: 17%;
+  padding: 1%;
+  border: 1px solid #313131;
+  margin: 2%;
+  float: left;
+}
+
+.clearfix {
+  float: none;
+  clear: both;
+}
+
+.tbl-full {
+  width: 100%;
+  padding: 3%;
+  text-align: center;
+}
+
+.tbl-full tr th {
+  border-bottom: 1px solid black;
+  padding: 1%;
+}
+
+.tbl-full th, td {
+  border-right: 1px solid black;
+  padding: 1%;
+}
+
+.tbl-right {
+  border-right: 0px solid;
+}
+
+.tbl-left {
+  border-left: 1px solid black;
+}
+
+.btn-primary {
+  border: 1px solid black;
+  background-color: #e24040;
+  color: whitesmoke;
+  padding: 1%;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #d46363;
+}
+
+.btn-update {
+  border: 1px solid black;
+  background-color: lime;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-update:hover {
+  background-color: green;
+}
+
+.btn-delete {
+  border: 1px solid black;
+  background-color: #4864fd;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-delete:hover {
+  background-color: #0026ff;
+}
+
+.tbl-empty {
+  padding: 5px;
+  border: 0px;
+}
+/*# sourceMappingURL=admin.css.map */

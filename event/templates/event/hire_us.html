@@ -1,0 +1,56 @@
+hire us
+
+{% block content %}
+
+
+
+{% if phase_forms_list %}
+    <form method="POST" action="{% url 'phase_form' %}">
+        {% csrf_token %}
+        {% for form in phase_forms_list %}
+            {{form.as_p}}
+            <hr>
+        {% endfor %}
+        <input type="submit">
+    </form>
+
+{% else %}
+    <form method='POST' action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit">
+    </form>
+{% endif %}
+
+<script>
+    let start_date=document.getElementById("id_from_date");
+    let end_date=document.getElementById("id_to_date");
+
+    start_date.addEventListener('change',function(){
+        if(end_date.value!==''){
+            
+            if(Date.parse(start_date.value)>Date.parse(end_date.value)){
+                alert("Enter a valid from and to date")
+                
+                start_date.value='';
+                end_date.value=''
+            }
+        }
+        
+    })
+
+    end_date.addEventListener('change',function(){
+        if(start_date.value!==''){
+            if(Date.parse(start_date.value)>Date.parse(end_date.value)){
+                alert("Enter a valid from and to date")
+                start_date.value='';
+                end_date.value=''
+            }
+
+        }
+        
+
+    })
+</script>
+
+{% endblock %}

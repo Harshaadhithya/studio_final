@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<section id="portfolio" class="portfolio section-show">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>{{event_obj.event_name}}</h2>
+      <!-- <h5>Event Name: acheivers Day</h5> -->
+      {% if  event_obj.from_date != event_obj.to_date%}
+      <h5>Event Date: {{event_obj.from_date}} - {{event_obj.to_date}}</h5>
+      {% else %}
+      <h5>Event Date: {{event_obj.from_date}}</h5>
+      {% endif %}
+      <h5>Photos Link: <a href="{{event_obj.eventphotoslink.photos_link}}" target="_blank">Click Here</a></h5>
+    
+
+    </div>
+
+    
+   
+
+    <div class="row portfolio-container">
+
+      {% for event_photo in event_photo_objs  %}
+        <div class="col-lg-4 col-md-6 portfolio-item ">
+          <div class="my-portfolio-wrap">
+            <a href="{{event_photo.photo.url}}" target="_blank">
+              <img src="{{event_photo.photo.url}}" class="img-fluid" alt="">
+            </a>
+            
+          </div>
+        </div>
+        <a href="{{event_photo.url}}" target="_blank"></a>
+
+      {% endfor %}
+
+      
+
+        
+  
+
+      
+      
+    </div>
+     
+  </div>
+</section>
+
+
+ 
+{% endblock %}

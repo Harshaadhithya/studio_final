@@ -1,0 +1,19 @@
+Phase
+
+{% block content %}
+
+
+
+{% if phase_forms_list %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {% for form in phase_forms_list %}
+            {{form.as_p}}
+            <hr>
+        {% endfor %}
+        <input type="submit">
+    </form>
+    
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+    {% block content %}
+
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+        <br>
+        <a href="{% url 'admin_events_list' 'all' %} ">all_events</a>
+        <br>
+        <a href=" {% url 'admin_events_list' 'upcoming' %} ">upcoming_events</a>
+        <br>
+        <a href="{% url 'admin_events_list' 'approved' %} ">approved events</a>
+        <br>
+        <a href="{% url 'admin_events_list' 'rejected' %} ">rejected events</a>
+        <br>
+        <a href="{% url 'admin_events_list' 'completed' %} ">completed events</a>
+        <br>
+        <a href="{% url 'admin_events_list' 'yet_to_be_approved' %} ">event request</a>
+        <hr>
+
+        
+
+
+    {% endblock %}
+
+    

@@ -1,0 +1,13 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+    {% for event_photo in event_photo_objs  %}
+        <img src="{{event_photo.photo.url}}" style="width:350px; height:200px;" alt="">
+        <a href="{% url 'update_event_photo' event_photo.id %}"><button>update</button></a>
+        <a href="{% url 'delete_event_photo' event_photo.id %}"><button>delete</button></a>
+        <hr>
+        <!-- <p>{{event_photo.uploaded_by}}</p> -->
+    {% endfor %}
+
+{% endblock %}
